@@ -1,0 +1,9 @@
+[submodule "tools/ssv-video"]
+	path = tools/ssv-video
+	url = https://github.com/Serg2206/ssv-video.git
+[submodule "tools/ssv-book-generator"]
+	path = tools/ssv-book-generator
+	url = https://github.com/Serg2206/ssv-book-generator.git
+[submodule "tools/ssv-web-dashboard"]
+	path = tools/ssv-web-dashboard
+	url = https://github.com/Serg2206/ssvproff-panel.git
