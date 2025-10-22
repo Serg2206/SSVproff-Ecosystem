@@ -7,3 +7,6 @@
 [submodule "tools/ssv-web-dashboard"]
 	path = tools/ssv-web-dashboard
 	url = https://github.com/Serg2206/ssvproff-panel.git
+[submodule "tools/ssv-monetization-tool"]
+	path = tools/ssv-monetization-tool
+	url = https://github.com/Serg2206/ssv-monetization-tool.git
