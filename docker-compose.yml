@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  # Документация MkDocs (если есть в субмодулях)
+  docs:
+    image: squidfunk/mkdocs-material:latest
+    volumes:
+      - ./docs:/docs
+    ports:
+      - "8000:8000"
+    command: serve --dev-addr=0.0.0.0:8000
+    restart: unless-stopped
+
+  # Placeholder для будущих микросервисов
+  # api:
+  #   build:
+  #     context: ./tools/api-service
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "8001:8001"
+  #   environment:
+  #     - DATABASE_URL=${DATABASE_URL}
+  #   depends_on:
+  #     - db
+
+  # База данных PostgreSQL (если потребуется)
+  # db:
+  #   image: postgres:15-alpine
+  #   environment:
+  #     POSTGRES_DB: ssvproff
+  #     POSTGRES_USER: ${DB_USER:-ssvproff}
+  #     POSTGRES_PASSWORD: ${DB_PASSWORD:-changeme}
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  #   restart: unless-stopped
+
+  # Redis для кэширования
+  # redis:
+  #   image: redis:7-alpine
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - redis_data:/data
+  #   restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  default:
+    name: ssvproff-ecosystem
+    driver: bridge
